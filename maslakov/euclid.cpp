@@ -4,7 +4,7 @@ using namespace std;
 
 int euclid_mod(int a, int b){
 
-   while(b&&a) (a>b)? (a%=b):(b%=a); 
+  while(b&&a) (a>b)? (a%=b):(b%=a); //for(int c=a%b; c != 0; a=b,b=c,c=a%b); 
    if(a) return a; else return b;
 
 }

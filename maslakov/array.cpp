@@ -15,7 +15,7 @@ int main(){
   
   
   double b=first;
-  for (int i=1;i<n-1;i++){
+  for (int i=1;i<n-1;i++) {
     
     
     double c=arr[i];
@@ -23,7 +23,7 @@ int main(){
     b=c;
 
   }
-  for (int i=0;i<n;i++){
+  for (int i=0;i<n;i++) {
     cout<<arr[i]<<endl;
   }
   cout<<" "<< endl; 

@@ -7,9 +7,9 @@ int main() {
   const unsigned char red[] = { 255,0,0 }, green[] = { 0,255,0 }, blue[] = { 0,0,255 };
 
   for(int p = 0; p < n; ++p) {
-    for(int q = 0; q < n; ++q) {
+    for(int q = 0; q <= p; ++q) {
       int val = 0;
-      if ((p & q) == 0) {
+      if (((p-q) & q) == 0) {
 	val = 255;
       }
       image.atXY(q, p, 0, 0) = val;
