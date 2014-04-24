@@ -1,0 +1,50 @@
+﻿Построение начато 20/03/2014 17:16:05.
+     1>Проект "C:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\lenaaa\lenaaa.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание "Debug\lenaaa.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main_cimg.cpp
+         main_cimg.cpp
+     1>c:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\lenaaa\cimg.h(13495): warning C4244: аргумент: преобразование "const double" в "const int", возможна потеря данных
+                 c:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\lenaaa\cimg.h(13493): при компиляции функции-члена "double cimg_library::CImg<T>::_cimg_math_parser::mp_joff(void)" класса шаблон
+                 with
+                 [
+                     T=float
+                 ]
+                 c:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\lenaaa\cimg.h(14766): см. ссылку на создание экземпляров класса шаблон при компиляции "cimg_library::CImg<T>::_cimg_math_parser"
+                 with
+                 [
+                     T=float
+                 ]
+                 c:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\lenaaa\cimg.h(14764): при компиляции функции-члена "double cimg_library::CImg<T>::eval(const char *const ,const double,const double,const double,const double) const" класса шаблон
+                 with
+                 [
+                     T=float
+                 ]
+                 c:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\lenaaa\cimg.h(45575): см. ссылку на создание экземпляров класса шаблон при компиляции "cimg_library::CImg<T>"
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\lenaaa\cimg.h(13495): warning C4244: аргумент: преобразование "const double" в "const int", возможна потеря данных
+     1>c:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\lenaaa\cimg.h(13495): warning C4244: аргумент: преобразование "const double" в "const int", возможна потеря данных
+     1>c:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\lenaaa\cimg.h(13495): warning C4244: аргумент: преобразование "const double" в "const int", возможна потеря данных
+       ManifestResourceCompile:
+         Для всех выходных данных обновления не требуется.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\Debug\lenaaa.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\lenaaa.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\Debug\lenaaa.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\Debug\lenaaa.lib" /MACHINE:X86 Debug\lenaaa.exe.embed.manifest.res
+         Debug\main_cimg.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\lenaaa.exe.embed.manifest" /manifest Debug\lenaaa.exe.intermediate.manifest
+         Для всех выходных данных обновления не требуется.
+       LinkEmbedManifest:
+         Для всех выходных данных обновления не требуется.
+         lenaaa.vcxproj -> C:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\Debug\lenaaa.exe
+       FinalizeBuildStatus:
+         Файл "Debug\lenaaa.unsuccessfulbuild" удаляется.
+         Обращение к "Debug\lenaaa.lastbuildstate".
+     1>Построение проекта "C:\kurs_c_plus_plus\prog_course_2014\tass\part1\lect04\lenaaa\lenaaa\lenaaa.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:05.28
