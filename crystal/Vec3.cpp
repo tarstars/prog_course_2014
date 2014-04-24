@@ -5,56 +5,48 @@
 
 using namespace std;
 
-Vec3::Vec3(float xx, float yy, float zz) : x(xx), y(yy), z(zz) {
+Vec3::Vec3(double xx, double yy, double zz) : x(xx), y(yy), z(zz) {
 }
 
-Vec3::Vec3(const Vec3& a) : x(a.x), y(a.y), z(a.z) {}
+//Vec3::Vec3(const Vec3& a) : x(a.x), y(a.y), z(a.z) {}
 
+/*
 Vec3&
 Vec3::operator=(const Vec3& a) {
   x = a.x;
   y = a.y;
   z = a.z;
   return *this;
+  }*/
+
+
+
+double Vec3::rad() const {
+  return sqrt(x*x + y*y + z*z);
 }
 
-
-
-float rad(Vec3& a) {
-	return sqrt(a.x*a.x + a.y*a.y + a.z*a.z);
+double Vec3::At(int q) {
+  switch (q)
+    {
+    case 1:	return x;
+    case 2:	return y;
+    case 3:	return z;
+    }
 }
 
-float At(Vec3& a, int q) {
-
+void Vec3::Set(int q, double val) {
 	switch (q)
 	{
 		case 1:
-			return a.x;
+			 x = val;
 		break;
 
 		case 2:
-			return a.y;
+			 y = val;
 		break;
 
 		case 3:
-			return a.z;
-		break;
-	}
-}
-
-void Set(Vec3& a, int q, float val) {
-	switch (q)
-	{
-		case 1:
-			 a.x = val;
-		break;
-
-		case 2:
-			 a.y = val;
-		break;
-
-		case 3:
-			 a.z = val;
+			 z = val;
 		break;
 	}
 }

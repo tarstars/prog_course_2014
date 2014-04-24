@@ -7,8 +7,8 @@ using namespace std;
 int main() {
 
 char t;
-float r;
-float element;
+double r;
+double element;
 int index;
 index=1;
 
@@ -18,9 +18,12 @@ index=1;
   Vec3 a(3, 4, 0);
   Vec3 b(a);
   Vec3 c = a;
-  r = rad(a);
-  element = At(a, index);
-  Set(a, 3, 10);
+  r = a.rad();
+  element = a.At(index);
+  a.Set(3, 10);
+
+  //a+b = a.operator+(b)
+  //cout << a = operator<<(cout, a)
 
   Vec3 d(0, 0, 0);
   d = a + b;
@@ -39,7 +42,7 @@ index=1;
 
   int i;
   for (i=1 ; i < 4 ; i++)
-	  cout << At(a,i) << endl;
+	  cout << a.At(i) << endl;
 
 
 
