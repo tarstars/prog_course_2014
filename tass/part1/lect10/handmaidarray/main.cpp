@@ -32,6 +32,11 @@ public:
     tmp.swap(*this);
 
     return *this;
+    //if (this == &r) return *this
+    //delete[] pDat;
+    //pDat = new double[r.n];
+    //n=r.n;
+    //for(int t = 0; t < n; ++t) pDat[t] = r.pDat[t];
   }
 
   void swap(CustomVector& r) {
