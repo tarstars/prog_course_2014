@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+
+class Tens4
+{
+ public:
+  double dat[3][3][3][3];
+  Tens4();
+  Tens4(const Tens4& t);
+  //Tens4& operator=(const Tens4& t);
+    
+
+};
