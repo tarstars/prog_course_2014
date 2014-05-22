@@ -1,5 +1,5 @@
-prog: main.o  mat3.o  poly.o  Tens4.o  Vec3.o
-	g++ main.o  mat3.o  poly.o  Tens4.o  Vec3.o -o prog
+prog: main.o  mat3.o  poly.o  Tens4.o  Vec3.o util.o
+	g++ main.o  mat3.o  poly.o  Tens4.o  Vec3.o util.o -o prog
 
 main.o: main.cpp
 	g++ -c main.cpp -omain.o
@@ -15,6 +15,9 @@ Tens4.o: Tens4.cpp Tens4.h
 
 Vec3.o: Vec3.cpp Vec3.h
 	g++ -c Vec3.cpp -oVec3.o
+
+util.o: util.cpp util.h
+	g++ -c util.cpp -outil.o
 
 clean:
 	rm prog *~ *.o

@@ -10,7 +10,7 @@ Poly::Poly()
     }
 }
 
-Poly::Poly(complex <double> c0, complex <double> c1, complex <double> c2, complex <double> c3)
+Poly::Poly(complex <double> const& c0, complex <double> const & c1, complex <double> const & c2, complex <double> const & c3)
 {
     c[0]=c0;
     c[1]=c1;
@@ -22,7 +22,7 @@ Poly::Poly(complex <double> *cc)
 {
     for(int i=0;i<4;++i)
     {
-        c[i]=*cc++;
+      c[i]=cc[i]; //*cc++
     }
 }
 

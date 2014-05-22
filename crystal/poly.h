@@ -5,22 +5,22 @@
 #include <complex>
 #include <cmath>
 
-using namespace std;
+//using namespace std;
 
 class Poly
 {
-    complex <double> c[4];  // коэффициенты
+  std::complex <double> c[4];  // РєРѕСЌС„С„РёС†РёРµРЅС‚С‹
 public:
     Poly();
-    Poly(complex <double>, complex <double>, complex <double>, complex <double>);
-    Poly(complex <double> *);
+    Poly(std::complex <double> const &, std::complex <double> const &, std::complex <double> const &, std::complex <double> const &);
+    Poly(std::complex <double> *);
     Poly(const Poly&);
 
-    complex <double> At(int);
-    void Set(int, complex <double>);
+    std::complex <double> At(int);
+    void Set(int, std::complex <double>);
 
     Poly Canon();
-    void Roots(complex <double> *, complex <double> *, complex <double> *);
+    void Roots(std::complex <double> *, std::complex <double> *, std::complex <double> *);
 
     friend std::ostream& operator<<(std::ostream&, const Poly&);
   //  friend Poly operator+(const Poly&, const Poly&);
