@@ -37,7 +37,7 @@ ostream& operator<<(ostream& os, const Mat3& a)
     return os;
 }
 
-double Mat3::At(int p, int q)
+double Mat3::At(int p, int q) const
 {
     return mat[p][q];
 }

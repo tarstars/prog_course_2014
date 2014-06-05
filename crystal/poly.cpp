@@ -4,13 +4,13 @@ using namespace std;
 
 Poly::Poly()
 {
-    for(int i=0;i<4;++i)
+    for(int i=0; i<4; ++i)
     {
         c[i]=0.;
     }
 }
 
-Poly::Poly(complex <double> const& c0, complex <double> const & c1, complex <double> const & c2, complex <double> const & c3)
+Poly::Poly(double const& c0, double const & c1, double const & c2, double const & c3)
 {
     c[0]=c0;
     c[1]=c1;
@@ -18,17 +18,17 @@ Poly::Poly(complex <double> const& c0, complex <double> const & c1, complex <dou
     c[3]=c3;
 }
 
-Poly::Poly(complex <double> *cc)
+Poly::Poly(double *cc)
 {
-    for(int i=0;i<4;++i)
+    for(int i=0; i<4; ++i)
     {
-      c[i]=cc[i]; //*cc++
+        c[i]=cc[i]; //*cc++
     }
 }
 
 Poly::Poly(const Poly& p)
 {
-    for(int i=0;i<4;++i)
+    for(int i=0; i<4; ++i)
     {
         c[i]=p.c[i];
     }
@@ -40,42 +40,83 @@ ostream& operator<<(ostream& os, const Poly& p)
     return os;
 }
 
-complex <double> Poly::At(int n)
+double Poly::At(int n) const
 {
     return c[n];
 }
 
-void Poly::Set(int n, complex <double> cc)
+void Poly::Set(int n, double cc)
 {
     c[n]=cc;
 }
-/*
-Poly Poly::Canon()
+
+void Poly::Roots(complex <double> *root1, complex <double> *root2, complex <double> *root3) const
 {
-    Poly ret;
-
-    ret.c[3]=1.;
-    ret.c[2]=0.;
-    ret.c[1]=c[1]/c[3] - c[2]*c[2]/3./c[3]/c[3];
-    ret.c[0]=2.*c[2]*c[2]*c[2]/27./c[3]/c[3]/c[3] - c[2]*c[1]/3./c[3]/c[3] + c[0]/c[3];
-
-    return ret;
-}
-*/
-void Poly::Roots(complex <double> *root1, complex <double> *root2, complex <double> *root3)
-{
-    complex <double> a,b,p,q,Q, Im;
-
+    double a,b,C,Q,R,S,fi,T;
+    complex <double> Im;
     Im = complex<double>(0.0,1.0);
 
-    p=c[1]/c[3] - c[2]*c[2]/3./c[3]/c[3];
-    q=2.*c[2]*c[2]*c[2]/27./c[3]/c[3]/c[3] - c[2]*c[1]/3./c[3]/c[3] + c[0]/c[3];
-    Q=p*p*p/27. + q*q/4.;
-    a=pow(-q/2.+sqrt(Q) , 1./3.);
+    if(c[3]==0) throw("Not cubic!");
 
-    b=-p/3./a;
+    a=c[2]/c[3];
+    b=c[1]/c[3];
+    C=c[0]/c[3];
 
-    *root1=a+b - c[2]/3./c[3];
-    *root2=-(a+b)/2.+Im*(a+b)/2.*sqrt(3.) - c[2]/3./c[3];
-    *root3=-(a+b)/2.-Im*(a+b)/2.*sqrt(3.) - c[2]/3./c[3];
+    Q=(a*a-3.*b)/9.;
+    R=(2.*a*a*a-9.*a*b+27.*C)/54.;
+    S=Q*Q*Q-R*R;
+
+    if(S==0)
+    {
+        T=pow(R,1/3.);
+        *root1=-2.*T-a/3.;
+        *root2=T-a/3.;
+        *root3=T-a/3.;
+    }
+    else
+    {
+        if(S>0.)
+        {
+            fi=acos(R/sqrt(Q*Q*Q))/3.;
+            *root1=-2.*sqrt(Q)*cos(fi)-a/3.;
+            *root2=-2.*sqrt(Q)*cos(fi+2./3.*pi)-a/3.;
+            *root3=-2.*sqrt(Q)*cos(fi-2./3.*pi)-a/3.;
+        }
+        else
+        {
+            if(Q==0)
+            {
+                T=-pow(C-a*a*a/27.,1./3.);
+                *root1=T;
+                *root2=-(a+T)/2.+0.5*Im*sqrt(abs((a-3.*T)*(a+T)-4.*b));
+                *root3=-(a+T)/2.-0.5*Im*sqrt(abs((a-3.*T)*(a+T)-4.*b));
+            }
+            else
+            {
+                if(Q>0)
+                {
+                    fi=acosh(abs(R)/sqrt(abs(Q*Q*Q)))/3.;
+                    T=sign(R)*sqrt(abs(Q))*cosh(fi);
+                    *root1=-2.*T-a/3.;
+                    *root2=T-a/3.+Im*sqrt(3.*abs(Q))*sinh(fi);
+                    *root3=T-a/3.-Im*sqrt(3.*abs(Q))*sinh(fi);
+                }
+                else
+                {
+                    fi=asinh(abs(R)/sqrt(abs(Q*Q*Q)))/3.;
+                    T=sign(R)*sqrt(abs(Q))*sinh(fi);
+                    *root1=-2.*T-a/3.;
+                    *root2=T-a/3.+Im*sqrt(3.*abs(Q))*cosh(fi);
+                    *root3=T-a/3.-Im*sqrt(3.*abs(Q))*cosh(fi);
+                }
+            }
+        }
+    }
+
 }
+
+double sign(double x)
+{
+    return (x<0)?-1:1;
+}
+

@@ -5,27 +5,27 @@
 #include <complex>
 #include <cmath>
 
+#define pi 3.14159265359
+
 //using namespace std;
 
 class Poly
 {
-  std::complex <double> c[4];  // коэффициенты
+  double c[4];  // коэффициенты
 public:
     Poly();
-    Poly(std::complex <double> const &, std::complex <double> const &, std::complex <double> const &, std::complex <double> const &);
-    Poly(std::complex <double> *);
+    Poly(double const &, double const &, double const &, double const &);
+    Poly(double *);
     Poly(const Poly&);
 
-    std::complex <double> At(int);
-    void Set(int, std::complex <double>);
+    double At(int) const;
+    void Set(int, double);
 
-    Poly Canon();
-    void Roots(std::complex <double> *, std::complex <double> *, std::complex <double> *);
+    void Roots(std::complex <double> *, std::complex <double> *, std::complex <double> *) const;
 
     friend std::ostream& operator<<(std::ostream&, const Poly&);
-  //  friend Poly operator+(const Poly&, const Poly&);
- //   friend Poly operator-(const Poly&, const Poly&);
- //   friend Poly operator*(const Poly&, const Poly&);
 };
+
+double sign(double);
 
 #endif // POLY_H_INCLUDED

@@ -9,7 +9,7 @@ class Mat3
 public:
     Mat3();
     Mat3(const Mat3&);
-    double At(int, int);
+    double At(int, int) const;
     void Set(int, int, double);
     void T();
 
